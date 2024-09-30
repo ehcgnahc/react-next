@@ -9,7 +9,10 @@ export default function Carousel({data}){
             <BsArrowLeftCircleFill className={`${styles.arrow} ${styles.arrow_left}`}/>
             {data["slides"].map((item,idx)=>{
                 return (
-                    <img src={item.src} alt={item.alt} key={idx} className={styles.slide}/>
+                    <div className={styles.slide}>
+                        <img src={item.src} alt={item.alt} key={idx}/>
+                    </div>
+                    
                 );
             })}
             <BsArrowRightCircleFill className={`${styles.arrow} ${styles.arrow_right}`}/>
