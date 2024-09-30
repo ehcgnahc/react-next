@@ -19,7 +19,7 @@ export default function Carousel({data}){
             <span className={styles.indicators}>
                 {
                     data["slides"].map((_, idx)=>{
-                        return (<button key={idx} onClick={null}></button>);
+                        return (<button key={idx} onClick={null} className={styles.indicator}></button>);
                     })
                 }
             </span>
