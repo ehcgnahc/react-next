@@ -14,14 +14,14 @@ export default function Carousel({data}){
     return (
         <div className={styles.carousel}>
             <BsArrowLeftCircleFill onClick={prevSlide} className={`${styles.arrow} ${styles.arrow_left}`}/>
-            {data["slides"].map((item,idx)=>{
-                return (
-                    <div className={slide === idx? styles.slide : styles.slide_hidden}>
-                        <img src={item.src} alt={item.alt} key={idx}/>
+            <div className={styles.slide} style={{ 'index': `-${slide * 100}%`, }}>
+                {data["slides"].map((item,idx)=>(
+                    <div className={styles.slider} key={idx}>
+                        <img src={item.src} alt={item.alt}/>
                     </div>
                     
-                );
-            })}
+                ))}
+            </div>
             <BsArrowRightCircleFill onClick={nextSlide} className={`${styles.arrow} ${styles.arrow_right}`}/>
             <span className={styles.indicators}>
                 {data["slides"].map((_, idx)=>{
