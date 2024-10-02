@@ -13,9 +13,9 @@ export default function Carousel({data}){
     return (
         <div className={styles.carousel}>
             <BsArrowLeftCircleFill onClick={prevSlide} className={`${styles.arrow} ${styles.arrow_left}`}/>
-            <div className={styles.slide} style={{ 'index': `-${slide * 100}%`, }}>
+            <div className={styles.slide}>
                 {data["slides"].map((item,idx)=>(
-                    <div className={styles.slider} key={idx}>
+                    <div className={styles.slider} style={{transform: `translateX(-${slide * 100}%)`}} key={idx}>
                         <img src={item.src} alt={item.alt}/>
                     </div>
                 ))}
