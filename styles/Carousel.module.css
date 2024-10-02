@@ -61,7 +61,7 @@
 
 .indicator{
     background-color: black;
-    height: 0.5rem;
+    height: 0.7rem;
     width: 0.5rem;
     border-radius: 100%;
     border: none;
@@ -73,7 +73,11 @@
 
 .indicator_inactive{
     background-color: grey;
-    height: 0.5rem;
+    height: 0.7rem;
     width: 0.5rem;
     border-radius: 100%;
+    border: none;
+    outline: none;
+    margin: 0 0.2rem;
+    
 }

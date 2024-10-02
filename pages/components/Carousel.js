@@ -18,7 +18,6 @@ export default function Carousel({data}){
                     <div className={styles.slider} key={idx}>
                         <img src={item.src} alt={item.alt}/>
                     </div>
-                    
                 ))}
             </div>
             <BsArrowRightCircleFill onClick={nextSlide} className={`${styles.arrow} ${styles.arrow_right}`}/>
