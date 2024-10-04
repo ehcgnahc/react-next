@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../../styles/Carousel.module.css"
-import {BsArrowLeftCircleFill, BsArrowRightCircleFill} from "react-icons/bs"
+import { SlArrowLeft,SlArrowRight } from "react-icons/sl"
 
 export default function Carousel({data}){
     const [slide, setSlide] = useState(0);
@@ -12,7 +12,7 @@ export default function Carousel({data}){
     }
     return (
         <div className={styles.carousel}>
-            <BsArrowLeftCircleFill onClick={prevSlide} className={`${styles.arrow} ${styles.arrow_left}`}/>
+            <SlArrowLeft onClick={prevSlide} className={`${styles.arrow} ${styles.arrow_left}`}/>
             <div className={styles.slide}>
                 {data["slides"].map((item,idx)=>(
                     <div className={styles.slider} style={{transform: `translateX(-${slide * 100}%)`}} key={idx}>
@@ -20,7 +20,7 @@ export default function Carousel({data}){
                     </div>
                 ))}
             </div>
-            <BsArrowRightCircleFill onClick={nextSlide} className={`${styles.arrow} ${styles.arrow_right}`}/>
+            <SlArrowRight onClick={nextSlide} className={`${styles.arrow} ${styles.arrow_right}`}/>
             <span className={styles.indicators}>
                 {data["slides"].map((_, idx)=>{
                         return (
