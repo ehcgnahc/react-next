@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../styles/Carousel.module.css"
-import { SlArrowLeft,SlArrowRight } from "react-icons/sl"
+import { BsArrowLeftCircleFill,BsArrowRightCircleFill } from "react-icons/bs"
 
 export default function Carousel({data}){
+    //const [img , setimg] = useState(0);
     const [slide, setSlide] = useState(0);
     const nextSlide = ()=>{
         setSlide(slide===data["slides"].length-1?0:slide+1);
@@ -10,9 +11,17 @@ export default function Carousel({data}){
     const prevSlide = ()=>{
         setSlide(slide===0?data["slides"].length-1:slide-1);
     }
+
+    useEffect(()=>{
+        const interval=setInterval(()=>{
+            setSlide(slide===data["slides"].length-1?0:slide+1);
+        },3000);
+        return ()=>clearInterval(interval);
+    },[slide]);
+    
     return (
         <div className={styles.carousel}>
-            <SlArrowLeft onClick={prevSlide} className={`${styles.arrow} ${styles.arrow_left}`}/>
+            <BsArrowLeftCircleFill onClick={prevSlide} className={`${styles.arrow} ${styles.arrow_left}`}/>
             <div className={styles.slide}>
                 {data["slides"].map((item,idx)=>(
                     <div className={styles.slider} style={{transform: `translateX(-${slide * 100}%)`}} key={idx}>
@@ -20,7 +29,7 @@ export default function Carousel({data}){
                     </div>
                 ))}
             </div>
-            <SlArrowRight onClick={nextSlide} className={`${styles.arrow} ${styles.arrow_right}`}/>
+            <BsArrowRightCircleFill onClick={nextSlide} className={`${styles.arrow} ${styles.arrow_right}`}/>
             <span className={styles.indicators}>
                 {data["slides"].map((_, idx)=>{
                         return (

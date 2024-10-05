@@ -8,13 +8,13 @@ function Header() {
                 <ul>
                     <li className={styles.hover}><Link href="/"><span className={styles.brand}>首頁</span></Link></li>
                     <li className={styles.text}>
-                        <Link href="/"><span className={styles.options}>窗簾專區</span><span className={styles.downArrow}></span></Link>
+                        <Link href="/"><span className={styles.options}>xx專區</span><span className={styles.downArrow}></span></Link>
                         <div className={styles.dropdown}>
                             <ul>
-                                <li><Link href="/Curtains/Curtain1"><span className={styles.options}>x1窗簾</span></Link></li>
-                                <li><Link href="/Curtains/Curtain2"><span className={styles.options}>x2窗簾</span></Link></li>
-                                <li><Link href="/Curtains/Curtain3"><span className={styles.options}>x3窗簾</span></Link></li>
-                                <li><Link href="/Curtains/Curtain4"><span className={styles.options}>x4窗簾</span></Link></li>
+                                <li><Link href="/Curtains/Curtain1"><span className={styles.options}>x1</span></Link></li>
+                                <li><Link href="/Curtains/Curtain2"><span className={styles.options}>x2</span></Link></li>
+                                <li><Link href="/Curtains/Curtain3"><span className={styles.options}>x3</span></Link></li>
+                                <li><Link href="/Curtains/Curtain4"><span className={styles.options}>x4</span></Link></li>
                             </ul>
                         </div>
                     </li>
