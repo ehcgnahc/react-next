@@ -1,14 +1,29 @@
 .container {
-  margin-top: 5%;
+  margin-top: 10vw;
 }
 
 .allPic {
-  width: 100%;
+  padding-top: 2vw;
+  width: 75vw;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
 }
 
 .pic {
-  padding: 2%;
+  background-color: antiquewhite;
+  padding: 1vw;
+  border-radius: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
+}
+
+.pic img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 23vw;
+  height: auto;
+  border-radius: 2vw;
 }
